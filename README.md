@@ -14,7 +14,7 @@
 
 ---
 
-# Код класса RGDialogsClients:
+# Код RGDialogsClients:
 
 ```csharp
 using System;
