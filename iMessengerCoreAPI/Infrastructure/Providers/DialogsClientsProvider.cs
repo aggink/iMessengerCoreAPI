@@ -30,8 +30,7 @@ public class DialogsClientsProvider : IDialogsClientsProvider
     {
         return _dbContext.DialogsClients
             .AsEnumerable()
-            .GroupBy(x => x.IDRGDialog)
-            .Where(group => group.All(dialogClient => clientIds.Any(id => id == dialogClient.IDClient)))
-            .FirstOrDefault();
+            .GroupBy(o => o.IDRGDialog)
+            .Where(group => clientIds.All(id => group.Any(client => client.IDClient == id))).FirstOrDefault();
     }
 }
